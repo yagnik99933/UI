@@ -1,0 +1,11 @@
+<article>
+    <h2><span>Select Payment Method:</span></h2><br>
+    <select (change)="selectChangeHandler($event)">
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Netbanking">Netbanking</option>
+    </select>
+    <br><br>
+    <button (click)="book()">Book your seat now </button>
+</article>

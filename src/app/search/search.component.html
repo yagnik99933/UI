@@ -1,0 +1,29 @@
+<h2>Search</h2>
+<form (ngSubmit)="search()">
+    From : <input type="text" name="from" [(ngModel)]=flightSearch.departureAirport /> <br />
+    To : <input type="text" name="to" [(ngModel)]=flightSearch.arrivalAirport /> <br />
+    Departure Date : <input type="date" name="date" [(ngModel)]=flightSearch.travelDate /> <br />
+       <button type="submit">Search</button>
+</form>
+
+<table *ngIf="response">
+    <tr>
+      <th *ngFor = "let column of headers">
+        {{column}}
+      </th>
+      <th>Book here!</th>
+    </tr>
+
+
+  
+    <tr *ngFor = "let row of response">
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[4]}}</td>
+      <td>{{row[5]}}</td>
+      <td><button (click)="proceedToBook($event,row[6])">Book</button></td>
+    </tr>
+  
+  </table>

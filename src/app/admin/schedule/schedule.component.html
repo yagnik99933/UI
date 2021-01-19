@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+  form {
+    border: 3px solid #f1f1f1;
+  }
+
+  input[type=text],
+  input[type=number],
+  input[type=password] input[type=number] input[type=date] {
+
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #46b7e4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+</style>
+
+
+<body>
+
+  <!-- <h2>Add FLight</h2> -->
+
+  <form (ngSubmit)="scheduleFlight()">
+
+    <div class="container">
+      <label style="font-size: 20px; color: #46b7e4; margin-bottom: 20px;"><b>Schedule Flight</b></label><br>
+      <label><b>Price</b></label><span style="margin-left: 110px;"></span>
+      <input type="number" placeholder="Enter flight price" name="price" [(ngModel)]=schedule.price required>
+
+      <br><label><b>Arrival Airport</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="Enter arrival airport" name="arrivalAirport" [(ngModel)]=schedule.arrival_airport
+        required>
+
+      <br><label><b>Departure Airport</b></label>&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="Enter depature airport" name="departureAirport"
+        [(ngModel)]=schedule.departure_airport required>
+
+      <span style="margin-bottom: 20px;"></span>
+      <br><label><b>Start Date</b></label> <span style="margin-left:60px;"></span>
+      <input type="date" placeholder="Arrival Time" name="ArrivalTime" [(ngModel)]=arrival_date required>
+
+      <br><label><b>End Date</b></label> <span style="margin-left: 30px; margin-top: 20px;"></span>
+      <input type="date" placeholder="Departure Time" name="DepartureTime" [(ngModel)]=departure_date required>
+
+      <button type="submit">Schedule</button>
+
+    </div>
+
+
+  </form>
+
+</body>
+
+</html>

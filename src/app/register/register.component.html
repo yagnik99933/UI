@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<style>   
+    input[type=text],
+    input[type=password],
+    input[type=number],
+    input[type=date] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+     
+    button {
+        background-color: rgb(46, 134, 150);
+        color: white;
+        padding: 15px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .cancelbtn {
+        padding: 15px 20px;
+        background-color: #FF2E00;
+    }
+   
+    .cancelbtn,
+    .signupbtn {
+        float: left;
+        width: 50%;
+    }
+    
+    .container {
+        padding: 16px;
+    }
+     
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    
+    @media screen and (max-width: 300px) {
+        .cancelbtn,
+        .signupbtn {
+            width: 100%;
+        }
+    }
+</style>
+ 
+<body>
+ 
+    <h2>Signup Form</h2>
+    <form  style="border:1px solid #ccc" (ngSubmit)="register()">
+        <div class="container">
+
+            <label><b>First Name</b></label>
+            <input type="text" placeholder="Enter your First Name"  name="firstName" [(ngModel)]=user.firstName required>
+
+            <label><b>Last Name</b></label>
+            <input type="text" placeholder="Enter your Last Name"  name="lastName" [(ngModel)]=user.lastName required>
+
+
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" [(ngModel)]=user.email  required>
+ 
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" [(ngModel)]=user.password required>
+ 
+
+            <label><b>Mobile Number</b></label>
+            <input type="number" placeholder="Enter mobile number" name="number" [(ngModel)]=user.mobileNo required>
+ 
+            <label><b>Date Of Birth</b></label>
+            <input type="date" placeholder="Enter date of Birth"    name="dob" [(ngModel)]=user.dateOfBirth required>
+ 
+            
+            <div class="clearfix">
+                <button (click)="redirect()" type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+ 
+</body>
+ 
+</html>
+
